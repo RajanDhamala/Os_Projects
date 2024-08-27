@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
             answers: 4,
             percentage: 90,
             attemptedQuestions: 10,
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad aliquid illo non pariatur ratione quos veniam harum esse eius placeat."
+            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad aliquid illo non pariatur ratione quos veniam harum esse eius placeat logjd urxji ."
         },
         {
             id: 2,
