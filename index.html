@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+
+    <div class="w-full max-w-6xl rounded-lg shadow-lg p-6 flex flex-col sm:flex-row gap-4">
+        
+        <div class="w-full sm:w-1/4 bg-gray-50 rounded-lg hidden sm:flex sm:flex-col">
+            <div class="text-center mb-8">
+                <div class="text-3xl font-bold mb-4">Logo</div>
+            </div>
+            <ul class="space-y-4">
+                <li class="border-b border-b-[#DBDBDB] px-2"><a href="#" class=" text-md font-bold text-gray-600">Menu</a></li>
+                <li class="border-b border-b-[#DBDBDB] px-2"><a href="#" class="text-sm font-semibold text-gray-600" id="mytest">My Tests</a></li>
+                <li class="border-b border-b-[#DBDBDB] px-2"><a href="#" class="text-sm font-semibold text-gray-600" id="editprofile">Edit Profile</a></li>
+                <li class="border-b border-b-[#DBDBDB] px-2"><a href="#" class="text-sm font-semibold text-gray-600" id="Security">Security</a></li>
+                <li class="border-b border-b-[#DBDBDB] px-2"><a href="#" class="text-sm font-semibold text-gray-600" id="logout">Log Out</a></li>
+            </ul>
+        </div>
+
+       
+        <div class="w-full sm:w-3/4 bg-[#F0F0F0] p-6 rounded-lg hidden">
+            <div class="flex gap-3">
+                <h2 class="text-lg sm:text-2xl font-bold mb-6">Edit Information</h2>
+                <svg class="sm:size-6 size-5 mt-1.5" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18.3228 0.5C8.66275 0.5 0.822754 8.34 0.822754 18C0.822754 27.66 8.66275 35.5 18.3228 35.5C27.9828 35.5 35.8228 27.66 35.8228 18C35.8228 8.34 27.9828 0.5 18.3228 0.5ZM20.0728 26.75H16.5728V16.25H20.0728V26.75ZM20.0728 12.75H16.5728V9.25H20.0728V12.75Z" fill="#FFADAD"/>
+                </svg>
+            </div>
+            
+          
+            <div class="flex items-center mb-8">
+                <div class="relative w-20 h-20 rounded-full overflow-hidden bg-gray-200 mr-6">
+                    <img src="https://img.freepik.com/free-photo/selfie-portrait-videocall_23-2149186104.jpg" alt="Profile Picture" class="object-cover h-full w-full">
+                </div>
+                <div class="flex flex-col gap-2">
+                    <span class="font-bold">Profile Picture</span>
+                    <span class="text-xs text-gray-500">PNG, JPG up to 5MB</span>
+                    <button class="text-green-600 font-semibold text-xs text-start">Update</button>
+                </div>
+            </div>
+
+      
+            <form class="space-y-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            
+                    <div>
+                        <label for="name" class="block font-semibold text-gray-700">Name</label>
+                        <input type="text" id="name" class="mt-1 bg-white block w-full border-[#AAAAAA] border rounded-md shadow-sm focus:ring focus:ring-opacity-50 focus:ring-green-500 focus:outline-none py-1 px-1.5" value="Tinku Bahadur">
+                    </div>
+            
+                    <div>
+                        <label for="college" class="block font-semibold text-gray-700">College</label>
+                        <select id="college" class="mt-1 bg-white block w-full border-[#AAAAAA] border rounded-md shadow-sm focus:outline-none py-1 px-1.5">
+                            <option value="ncit">Nepal College of Information Technology (NCIT)</option>
+                            <option value="kathford">Kathford International College of Engineering and Management</option>
+                            <option value="islington">Islington College</option>
+                            <option value="softwarica">Softwarica College of IT and E-Commerce</option>
+                            <option value="nami">NAMI College (Nepal Applied Management and IT)</option>
+                            <option value="british">The British College</option>
+                            <option value="kcc">Kantipur City College (KCC)</option>
+                            <option value="texas">Texas International College (Lincoln University Affiliated)</option>
+                            <option value="whitehouse">Himalayan Whitehouse International College</option>
+                            <option value="lincoln">Lincoln College Nepal (Lincoln University Affiliated)</option>
+                            <option value="other">Other</option>
+                        </select>
+                        
+                    </div>
+         
+                    <div>
+                        <label for="email" class="block font-semibold text-gray-700">Email</label>
+                        <input type="email" id="email" class="mt-1 bg-white block w-full border-[#AAAAAA] border rounded-md shadow-sm focus:ring focus:ring-opacity-50 focus:ring-green-500 focus:outline-none py-1 px-1.5" value="example@mail.com">
+                    </div>
+       
+                    <div>
+                        <label for="phone" class="block font-semibold text-gray-700">Phone</label>
+                        <input type="text" id="phone" class="mt-1 bg-white block w-full border-[#AAAAAA] border rounded-md shadow-sm focus:ring focus:ring-opacity-50 focus:ring-green-500 focus:outline-none py-1 px-1.5" value="977273704">
+                    </div>
+    
+                    <div>
+                        <label for="DOB" class="block font-semibold text-gray-700">Date of Birth</label>
+                        <input type="date" id="DOB" class="mt-1 bg-white block w-full border-[#AAAAAA] border rounded-md shadow-sm focus:ring focus:ring-opacity-50 focus:ring-green-500 focus:outline-none py-1 px-1.5" value="1995-07-18">
+                    </div>
+         
+                    <div>
+                        <label for="address" class="block font-semibold text-gray-700">Address (City)</label>
+                        <select id="address" class="mt-1 bg-white block w-full border-[#AAAAAA] border rounded-md shadow-sm focus:outline-none py-1 px-1.5">
+                            <option value="biratnagar">Biratnagar</option>
+                            <option value="kathmandu">Kathmandu</option>
+                            <option value="pokhara">Pokhara</option>
+                            <option value="lalitpur">Lalitpur</option>
+                            <option value="bhaktapur">Bhaktapur</option>
+                            <option value="dharan">Dharan</option>
+                            <option value="jhapa">Jhapa</option>
+                            <option value="hetauda">Hetauda</option>
+                            <option value="butwal">Butwal</option>
+                            <option value="nepalgunj">Nepalgunj</option>
+                            <option value="birgunj">Birgunj</option>
+                            <option value="janakpur">Janakpur</option>
+                            <option value="chitwan">Chitwan</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="pt-10 flex justify-end">
+                    <button type="submit" class="bg-green-500 text-white px-6 py-2 rounded-md hover:bg-green-600">Submit</button>
+                </div>
+            </form>
+            
+        </div>
+        <div class="w-full max-w-md bg-gray-100 p-6 rounded-lg">
+            <h2 class="text-2xl font-bold">Change Password</h2>
+            
+            <label for="old-password" class="block mt-4 font-semibold">Old Password</label>
+            <div class="relative">
+                <input type="password" id="old-password" minlength="7" placeholder="Enter previous password" 
+                    class="w-full py-2 px-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500" required>
+                <button type="button" class="absolute right-3 top-2.5 text-sm font-semibold" onclick="togglePassword('old-password', this)">
+                    show
+                </button>
+            </div>
+            
+       
+            <label for="new-password" class="block mt-4 font-semibold">New Password</label>
+            <div class="relative">
+                <input type="password" id="new-password" minlength="7"
+                    class=" w-full py-2 px-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Enter new password" required>
+                <button type="button" class="absolute right-3 top-2.5 text-sm font-semibold" onclick="togglePassword('new-password', this)">
+                    show
+                </button>
+            </div>
+            
+           
+            <label for="confirm-password" class="block mt-4 font-semibold">Confirm New Password</label>
+            <div class="relative">
+                <input type="password" id="confirm-password" placeholder="Re-Enter new password" minlength="7"
+                    class="w-full py-2 px-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500" required>
+                <button type="button" class="absolute right-3 top-2.5 text-sm font-semibold" onclick="togglePassword('confirm-password', this)">
+                    show
+                </button>
+            </div>
+        
+       
+            <button class="w-full mt-6 py-2 bg-green-500 text-white rounded-md hover:bg-green-600 transition duration-300">
+                Change Password
+            </button>
+        
+            <a href="#" class="block text-center text-sm hover:underline text-green-600 mt-4">Forgot Password?</a>
+        </div>
+        
+    </div>
+
+    <script src="./index.js"></script>
+
+
+</body>
+</html>
