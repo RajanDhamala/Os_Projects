@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password</title>
+    <script src="forgot.js" defer></script>
+   <link rel="stylesheet" href="../src/Forgot.css">
+</head>
+<body class="bg-gray-300 h-screen flex items-center justify-center">
+
+    <section class="bg-white p-8 md:p-12 lg:p-16 rounded-lg shadow-lg mb-8 max-w-md md:max-w-lg lg:max-w-xl w-full">
+        <h2 class="text-3xl font-bold text-blue-900 mb-6 text-center">Forgot Password</h2>
+
+        <form id="forgotPasswordForm" onsubmit="handleForgotPasswordSubmit(event)">
+            <div class="mb-5">
+                <label for="forgotEmailPhone" class="block text-gray-600 font-semibold mb-2">Enter Your Email or Phone Number</label>
+                <input type="text" id="forgotEmailPhone" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your email or phone number" required>
+            </div>
+
+            <div class="flex items-center justify-between">
+                <button type="submit" class="bg-blue-900 text-white py-2 px-6 rounded-lg shadow hover:bg-blue-700 transition duration-200 ease-in-out">Submit</button>
+            </div>
+        </form>
+
+        <div id="popup" class="fixed top-0 left-0 right-0 bottom-0 flex justify-center items-center bg-black bg-opacity-50 hidden">
+            <div class="bg-white p-6 rounded-lg shadow-lg max-w-xs text-center">
+                <p id="popupMessage" class="text-gray-700 font-medium"></p>
+                <button onclick="closePopup()" class="mt-5 bg-blue-900 text-white py-2 px-5 rounded-lg shadow hover:bg-blue-700 transition duration-200 ease-in-out">Close</button>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

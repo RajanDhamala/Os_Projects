@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recent Uploads</title>
+    <link rel="stylesheet" href="../src/RecentUploads.css">
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+    <div class="container mx-auto px-4">
+        <h1 class="text-2xl font-bold text-gray-800 mb-6 text-center">Recent Uploads</h1>
+        
+        <div class="overflow-x-auto">
+            <table class="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
+                <div class="bg-gray-800 text-white">
+                    <tr>
+                        <th class="px-6 py-3 text-left font-semibold uppercase text-sm">File Name</th>
+                        <th class="px-6 py-3 text-left font-semibold uppercase text-sm">Size</th>
+                        <th class="px-6 py-3 text-left font-semibold uppercase text-sm">Upload Time</th>
+                        <th class="px-6 py-3 text-left font-semibold uppercase text-sm">Status</th>
+                        <th class="px-6 py-3 text-left font-semibold uppercase text-sm">Actions</th>
+                    </tr>
+                </div>
+                <tbody id="uploadsTableBody" class="text-gray-700">
+                    <tr class="border-b hover:bg-gray-50">
+                        <td class="px-6 py-4">C programming mcq</td>
+                        <td class="px-6 py-4">1.2 MB</td>
+                        <td class="px-6 py-4">2024-11-01 10:30 AM</td>
+                        <td class="px-6 py-4">
+                            <span class="bg-green-100 text-green-600 py-1 px-3 rounded-full text-xs">Completed</span>
+                        </td>
+                        <td class="px-6 py-4 flex flex-col space-y-2 sm:flex-row sm:space-y-0 sm:space-x-2">
+                            <button onclick="viewFile()" class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600 transition">View</button>
+                            <button onclick="deleteFile()" class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 transition">Delete</button>
+                        </td>
+                    </tr>
+                    <tr class="border-b hover:bg-gray-50">
+                        <td class="px-6 py-4">Java Questions</td>
+                        <td class="px-6 py-4">650 KB</td>
+                        <td class="px-6 py-4">2024-11-02 02:15 PM</td>
+                        <td class="px-6 py-4">
+                            <span class="bg-green-100 text-green-600 py-1 px-3 rounded-full text-xs">Completed</span>
+                        </td>
+                        <td class="px-6 py-4 flex flex-col space-y-2 sm:flex-row sm:space-y-0 sm:space-x-2">
+                            <button onclick="viewFile()" class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600 transition">View</button>
+                            <button onclick="deleteFile()" class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 transition">Delete</button>
+                        </td>
+                    </tr>
+                    <tr class="border-b hover:bg-gray-50">
+                        <td class="px-6 py-4">Advanced Network</td>
+                        <td class="px-6 py-4">12.5 MB</td>
+                        <td class="px-6 py-4">2024-11-03 08:45 AM</td>
+                        <td class="px-6 py-4">
+                            <span class="bg-yellow-100 text-yellow-600 py-1 px-3 rounded-full text-xs">Processing</span>
+                        </td>
+                        <td class="px-6 py-4 flex flex-col space-y-2 sm:flex-row sm:space-y-0 sm:space-x-2">
+                            <button onclick="viewFile()" class="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600 transition">View</button>
+                            <button onclick="deleteFile()" class="bg-red-500 text-white px-3 py-1 rounded hover:bg-red-600 transition">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        
+    </div>
+
+    <script>
+        function viewFile() {
+            alert('trying to view file')
+        }
+        function deleteFile() {
+            alert('deleting file');
+        }
+    </script>
+</body>
+</html>

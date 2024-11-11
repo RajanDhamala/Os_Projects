@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MCQ Champs Dashboard</title>
+  <script defer src="./index.js"></script>
+  <link rel="stylesheet" href="../src/security.css">
+</head>
+<body class="bg-gray-100">
+
+
+  <!-- popup for logout -->
+  <div id="logoutPopup" class="hidden absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div class="bg-white p-8 rounded-lg shadow-2xl w-80 max-w-lg transform transition-all duration-300 ease-in-out">
+      <h2 class="text-2xl font-semibold text-gray-900 mb-4">Confirm Logout</h2>
+      <p class="text-gray-600 mb-6">Are you sure you want to log out of your account?</p>
+      <div class="flex justify-around gap-4 mt-4">
+        <button onclick="logout()" class="bg-red-600 text-white py-2 px-6 rounded-full font-semibold hover:bg-red-700 transition-colors duration-200">Yes, Logout</button>
+        <button onclick="toggleLogoutPopup()" class="bg-gray-300 text-gray-700 py-2 px-6 rounded-full font-semibold hover:bg-gray-400 transition-colors duration-200">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="md:hidden p-4 bg-blue-900 text-white flex justify-between items-center">
+    <h1 class="text-2xl font-bold">MCQ Champs</h1>
+    <button id="menu-btn" class="focus:outline-none">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+      </svg>
+    </button>
+  </div>
+  
+  <div class="flex min-h-screen">
+    <aside id="sidebar" class="absolute right-0 md:left-0 md:relative md:bg-blue-900 text-white md:w-64 md:py-7 px-2 transform translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out bg-blue-900 space-y-2 md:space-y-6 ">
+      <div class="text-center font-bold text-2xl hidden md:flex">MCQ Champs</div>
+      <nav class="md:mt-10 mt-0">
+        <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700" onclick="toggleSection('myDashboardSection')">Dashboard</a>
+        <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700" onclick="toggleSection('myTestsSection')">My Tests</a>
+        <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700" onclick="toggleSection('editProfileSection')">Edit Profile</a>
+        <a href="#" class="block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700" onclick="toggleSection('idpassSection')">Security</a>
+        <a href="#" class="md:hidden block py-2.5 px-4 rounded transition duration-200 hover:bg-blue-700" onclick="toggleLogoutPopup()">logout</a>
+      </nav>
+    </aside>
+
+    <div class="flex-1 p-6 md:p-8">
+      <div class="flex justify-between items-center mb-6 md:flex">
+        <h1 class="text-3xl font-semibold">Dashboard</h1>
+        <div class="flex gap-2">
+          <div class="h-10 w-10 rounded-full overflow-hidden">
+            <img src="https://xsgames.co/randomusers/assets/avatars/male/31.jpg" alt="" class="h-full w-full">
+          </div>
+          <button class="bg-blue-900 text-white py-2 px-4 rounded-lg" onclick="toggleLogoutPopup()">Logout</button>
+        </div>
+        
+      </div>
+
+      <section id="myDashboardSection" class="p-6 bg-gradient-to-b from-gray-100 to-gray-300 min-h-screen">
+        <div class="container mx-auto">
+      
+          <div class="bg-white p-8 rounded-lg shadow-md mb-10 flex flex-col items-center md:flex-row md:justify-between transition-transform transform hover:scale-105">
+            <div class="flex flex-col items-center md:flex-row">
+              <img src="https://xsgames.co/randomusers/assets/avatars/male/31.jpg" alt="Profile Picture" class="w-24 h-24 rounded-full shadow-lg mb-4 md:mb-0">
+              <div class="text-center md:text-left md:ml-4">
+                <h3 class="text-2xl font-semibold text-gray-800">Username</h3>
+                <p class="text-gray-500 mt-1">Passionate in global affairs and and space exploration.</p>
+              </div>
+            </div>
+            <button onclick="toggleSection('editProfileSection')" class="mt-6 md:mt-0 bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-blue-600 transition duration-300">
+              Edit Profile
+            </button>
+          </div>
+
+          <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+
+            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer">
+              <h3 class="text-xl font-semibold text-gray-800 mb-4">Test History</h3>
+              <ul class="text-gray-600 space-y-2">
+                <li class="flex items-center">
+                  <span class="h-2 w-2 bg-green-500 rounded-full mr-2"></span> Operating System: Score - 78% on Oct 5
+                </li>
+                <li class="flex items-center">
+                  <span class="h-2 w-2 bg-yellow-500 rounded-full mr-2"></span> Java Programming: Score - 85% on Oct 15
+                </li>
+                <li class="flex items-center">
+                  <span class="h-2 w-2 bg-red-500 rounded-full mr-2"></span> Advanced newtork: Score - 95% on Oct 20
+                </li>
+                <li class="text-blue-500 mt-2 cursor-pointer hover:underline" onclick="toggleSection('myTestsSection')">view details</li>
+              </ul>
+            </div>
+     
+            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+              <h3 class="text-xl font-semibold text-gray-800 mb-4">Recent Uploads</h3>
+              <ul class="text-gray-600 space-y-2">
+                <li class="flex items-center">
+                  <span class="h-2 w-2 bg-red-500 rounded-full mr-2"></span> Document: "java mcq" on Oct 5
+                </li>
+                <li class="flex items-center">
+                  <span class="h-2 w-2 bg-blue-500 rounded-full mr-2"></span> pdf: "Ospf mcq" on Oct 1
+                </li>
+                <li class="flex items-center">
+                  <span class="h-2 w-2 bg-red-500 rounded-full mr-2"></span> Document: "Basic math mcq" on Sep 29
+                </li>
+                <a href="./RecentUploads.html" class="text-blue-500 mt-2 cursor-pointer hover:underline">View All Uploads</a>
+              </ul>
+            </div>
+ 
+            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+              <h3 class="text-xl font-semibold text-gray-800 mb-4">Achievements</h3>
+              <p class="text-green-500 font-semibold mb-2">Highest Score: 95%</p>
+              <p class="text-yellow-500 font-semibold mb-2">Total Tests Taken: 25</p>
+              <p class="text-blue-500 font-semibold mb-2">Average Score: 78%</p>
+              <a href="./Achivemnts.html" class="text-blue-500 cursor-pointer hover:underline mt-4">View All Achievements</a>
+            </div>
+      
+         
+            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+              <h3 class="text-xl font-semibold text-gray-800 mb-4">Account Settings</h3>
+              <ul class="text-blue-500 font-semibold space-y-2">
+                <li><a href="#" onclick="toggleSection('editProfileSection')" class="hover:underline">Edit Profile</a></li>
+                <li><a href="#" onclick="toggleSection('idpassSection')" class="hover:underline">Change Password</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section class="bg-white p-6 rounded-lg shadow-md mb-6 hidden"id="myTestsSection" for="TestHistry">
+        <h2 class="text-2xl font-semibold text-gray-700 mb-4">Course Status</h2>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+          <div class="bg-blue-100 p-6 rounded-lg shadow-lg cursor-pointer transform hover:scale-105 hover:shadow-2xl transition-all duration-300 ease-in-out">
+            <h3 class="text-lg font-semibold">Course: C Programming Basics</h3>
+            <p class="text-gray-600">Faculty: BIT</p>
+            <p class="text-gray-600">Subject: Programming Fundamentals</p>
+            <p class="text-gray-600">Last Attempt: 2024-11-01</p>
+            <div class="mt-4">
+              <div class="flex justify-between items-center mb-2">
+                <span class="text-gray-700">Progress: 100%</span>
+                <span class="text-green-600 font-semibold">Finished</span>
+              </div>
+              <div class="w-full bg-gray-300 rounded-full h-2.5">
+                <div class="bg-green-600 h-2.5 rounded-full" style="width: 100%"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-blue-100 p-6 rounded-lg shadow-lg cursor-pointer transform hover:scale-105 hover:shadow-2xl transition-all duration-300 ease-in-out">
+            <h3 class="text-lg font-semibold">Course: Advanced Java</h3>
+            <p class="text-gray-600">Faculty: BIT</p>
+            <p class="text-gray-600">Subject: Object-Oriented Programming</p>
+            <p class="text-gray-600">Last Attempt: 2024-10-28</p>
+            <div class="mt-4">
+                <div class="flex justify-between items-center mb-2">
+                    <span class="text-gray-700">Progress: 85%</span>
+                    <span class="text-yellow-600 font-semibold">In Progress</span>
+                </div>
+                <div class="w-full bg-gray-300 rounded-full h-2.5">
+                    <div class="bg-yellow-500 h-2.5 rounded-full" style="width: 85%"></div>
+                </div>
+            </div>
+            <div class="mt-4 flex justify-end items-center">
+                <button class="bg-blue-600 text-white font-semibold py-1 text-md px-3  rounded-full hover:bg-blue-700">Retake Test</button>
+            </div>
+        </div>
+          <div class="bg-blue-100 p-6 rounded-lg shadow-lg cursor-pointer transform hover:scale-105 hover:shadow-2xl transition-all duration-300 ease-in-out">
+            <h3 class="text-lg font-semibold">Course: Advanced Java</h3>
+            <p class="text-gray-600">Faculty: BIT</p>
+            <p class="text-gray-600">Subject: Object-Oriented Programming</p>
+            <p class="text-gray-600">Last Attempt: 2024-10-28</p>
+            <div class="mt-4">
+              <div class="flex justify-between items-center mb-2">
+                <span class="text-gray-700">Progress: 85%</span>
+                <span class="text-yellow-600 font-semibold">In Progress</span>
+              </div>
+              <div class="w-full bg-gray-300 rounded-full h-2.5">
+                <div class="bg-yellow-500 h-2.5 rounded-full" style="width: 85%"></div>
+              </div>
+            </div>
+            <div class="mt-4 flex justify-between items-center">
+              <button class="bg-green-600 text-white font-semibold py-1 text-md px-3   rounded-full hover:bg-green-700">resume test</button>
+              <button class="bg-blue-600 text-white font-semibold py-1 text-md px-3  rounded-full hover:bg-blue-700" >Retake Test</button>
+          </div>
+
+          </div>
+          <div class="bg-blue-100 p-6 rounded-lg shadow-lg cursor-pointer transform hover:scale-105 hover:shadow-2xl transition-all duration-300 ease-in-out">
+            <h3 class="text-lg font-semibold">Course: Advanced Java</h3>
+            <p class="text-gray-600">Faculty: BIT</p>
+            <p class="text-gray-600">Subject: Object-Oriented Programming</p>
+            <p class="text-gray-600">Last Attempt: 2024-10-28</p>
+            <div class="mt-4">
+              <div class="flex justify-between items-center mb-2">
+                <span class="text-gray-700">Progress: 85%</span>
+                <span class="text-yellow-600 font-semibold">In Progress</span>
+              </div>
+              <div class="w-full bg-gray-300 rounded-full h-2.5">
+                <div class="bg-yellow-500 h-2.5 rounded-full" style="width: 85%"></div>
+              </div>
+            </div>
+            <div class="mt-4 flex justify-between items-center">
+              <button class="bg-green-600 text-white font-semibold py-1 text-md px-3   rounded-full hover:bg-green-700">resume test</button>
+              <button class="bg-blue-600 text-white font-semibold py-1 text-md px-3  rounded-full hover:bg-blue-700" >Retake Test</button>
+               <!--retake test button will be removed when if whole course is completed -->
+          </div>
+  
+        </div>
+      </section>
+
+      <section for="EditProfile" id="editProfileSection" class="bg-gray-200 p-6 rounded-lg shadow-md mb-6">
+        <h2 class="text-2xl font-semibold text-gray-700 mb-4">Edit Profile</h2>
+        <form id="profileForm">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div class="col-span-1 lg:col-span-2 text-start">
+              <label for="profile-picture" class="bg-blue-900 text-white py-2 px-4 rounded-lg cursor-pointer inline-block mb-4 font-semibold">
+                  Upload Profile Picture
+              </label>
+        
+              <input type="file" id="profile-picture" name="profile-picture" accept="image/jpeg, image/png" class="hidden" required>
+            </div>
+            <div clas>
+              <label for="email" class="block text-gray-600 mb-2 font-semibold">Email</label>
+              <input type="email" value="tinku123@gmail.com" id="email" name="email" class="w-full p-2 border border-gray-300 rounded" placeholder="Enter your email" required>
+            </div>
+            <div>
+              <label for="username" class="block text-gray-600 mb-2 font-semibold">Username</label>
+              <input type="text" id="username" name="username" value="TrialAcct" class="w-full p-2 border border-gray-300 rounded" placeholder="Enter your username" required>
+            </div>
+            <div>
+              <label for="phone" class="block text-gray-600 mb-2 font-semibold">Phone Number</label>
+              <input type="text" id="phone" value="9863390617" name="phone" class="w-full p-2 border border-gray-300 rounded" placeholder="Enter your phone number">
+            </div>
+            <div>
+              <label for="birth-date" class="block text-gray-600 mb-2 font-semibold">Birth Date</label>
+              <input type="date" id="birth-date" value="2006-12-12" name="birth-date" class="w-full p-2 border border-gray-300 rounded" required>
+            </div>
+            
+            <div>
+              <label for="college" class="block text-gray-600 mb-2">College</label>
+              <select id="college" name="college" class="w-full p-2 border border-gray-300 rounded" required>
+                <option value="Nepal Business College">Nepal Business College</option>
+                <option value="Lincoln University">Lincoln University affiliated</option>
+                <option value="Tribhuvan University">Tribhuvan University</option>
+                <option value="Kathmandu University">Kathmandu University</option>
+                <option value="Pokhara University">Pokhara University</option>
+                <option value="Purbanchal University">Purbanchal University</option>
+                <option value="Mid-Western University">Mid-Western University</option>
+                <option value="Far-Western University">Far-Western University</option>
+                <option value="others">others</option>
+              </select>
+            </div>
+            
+            <div>
+              <label for="student-id" class="block text-gray-600 mb-2 font-semibold">Student ID</label>
+              <input type="text" value="LC0016001001" id="student-id" name="student-id" class="w-full p-2 border border-gray-300 rounded">
+            </div>
+            <div>
+              <label for="city" class="block text-gray-600 mb-2 font-semibold">City</label>
+              <select id="city" name="city" class="w-full p-2 border border-gray-300 rounded" required>
+                <option value="Biratnagar">Biratnagar</option>
+                <option value="Kathmandu">Kathmandu</option>
+                <option value="Pokhara">Pokhara</option>
+                <option value="Lalitpur">Lalitpur</option>
+                <option value="Bhaktapur">Bhaktapur</option>
+                <option value="Dharan">Dharan</option>
+                <option value="Butwal">Butwal</option>
+                <option value="Nepalgunj">Nepalgunj</option>
+                <option value="Birgunj">Birgunj</option>
+                <option value="Janakpur">Janakpur</option>
+                <option value="Hetauda">Saptrai</option>
+                <option value="Dhangadhi">Dhangadhi</option>
+                <option value="others">Others</option>
+              </select>
+            </div>
+          </div>
+      
+          <div class="mt-6 text-center">
+            <button type="submit" class="bg-blue-900 text-white py-2 px-4 md:mt-2 rounded-lg">Save Changes</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="bg-white p-8 md:p-12 lg:p-16 rounded-lg shadow-lg mb-8 max-w-md md:max-w-lg lg:max-w-xl mx-auto hidden" id="idpassSection">
+        <h2 class="text-3xl font-bold text-blue-900 mb-6 text-center">Change Password</h2>
+    
+        <form id="passwordForm" onsubmit="handlePasswordChange(event)">
+            <div class="mb-5">
+                <label for="oldPassword" class="block text-gray-600 font-semibold mb-2">Old Password</label>
+                <div class="relative">
+                    <input type="password" id="oldPassword" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter old password" required>
+                    <button type="button" class="absolute right-3 top-1/2 transform -translate-y-1/2 text-blue-600 text-xs" onclick="togglePasswordVisibility('oldPassword')">Show</button>
+                </div>
+            </div>
+    
+            <div class="mb-5">
+                <label for="newPassword" class="block text-gray-600 font-semibold mb-2">New Password</label>
+                <div class="relative">
+                    <input type="password" id="newPassword" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter new password" required>
+                    <button type="button" class="absolute right-3 top-1/2 transform -translate-y-1/2 text-blue-600 text-xs" onclick="togglePasswordVisibility('newPassword')">Show</button>
+                </div>
+            </div>
+    
+            <div class="mb-5">
+                <label for="confirmNewPassword" class="block text-gray-600 font-semibold mb-2">Confirm New Password</label>
+                <div class="relative">
+                    <input type="password" id="confirmNewPassword" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Confirm new password" required>
+                    <button type="button" class="absolute right-3 top-1/2 transform -translate-y-1/2 text-blue-600 text-xs" onclick="togglePasswordVisibility('confirmNewPassword')">Show</button>
+                </div>
+            </div>
+    
+            <div class="flex items-center justify-between">
+                <button type="submit" class="bg-blue-900 text-white py-2 px-6 rounded-lg shadow hover:bg-blue-700 transition duration-200 ease-in-out">Save Changes</button>
+                <a href="./forgot.html" class="text-blue-600 hover:text-blue-800 text-sm underline" onclick="handleForgotPassword()">Forgot Password?</a>
+            </div>
+        </form>
+    
+        <div id="popup" class="fixed top-0 left-0 right-0 bottom-0 flex justify-center items-center bg-black bg-opacity-50 hidden">
+            <div class="bg-white p-6 rounded-lg shadow-lg max-w-xs text-center">
+                <p id="popupMessage" class="text-gray-700 font-medium"></p>
+                <button onclick="closePopup()" class="mt-5 bg-blue-900 text-white py-2 px-5 rounded-lg shadow hover:bg-blue-700 transition duration-200 ease-in-out">Close</button>
+            </div>
+        </div>
+    </section>
+    </div>
+  </div>
+</body>
+<link rel="stylesheet" href="./script.js">
+</html>
